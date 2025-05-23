@@ -1,6 +1,7 @@
 import { Tabs } from 'expo-router';
 import React from 'react';
 import { Platform } from 'react-native';
+import { FontAwesome5 } from '@expo/vector-icons';
 
 import { HapticTab } from '@/components/HapticTab';
 import { IconSymbol } from '@/components/ui/IconSymbol';
@@ -25,19 +26,66 @@ export default function TabLayout() {
           },
           default: {},
         }),
-      }}>
+      }}
+      initialRouteName="DashboardScreen"
+    >
       <Tabs.Screen
         name="index"
+        options={{
+          href: null,
+        }}
+      />
+      <Tabs.Screen
+        name="DashboardScreen"
         options={{
           title: 'Home',
           tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="CalendarScreen"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          title: 'Calendar',
+          tabBarIcon: ({ color }) => <FontAwesome5 name="calendar-alt" size={24} color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="PatientsScreen"
+        options={{
+          title: 'Patients',
+          tabBarIcon: ({ color }) => <FontAwesome5 name="user" size={24} color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="OPDVisitScreen"
+        options={{
+          title: 'Clinic',
+          tabBarIcon: ({ color }) => <FontAwesome5 name="clinic-medical" size={24} color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="ProfileScreen"
+        options={{
+          title: 'Profile',
+          tabBarIcon: ({ color }) => <FontAwesome5 name="user-md" size={24} color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="IPDAdmissionScreen"
+        options={{
+          href: null,
+        }}
+      />
+      <Tabs.Screen
+        name="MedicalRecordsScreen"
+        options={{
+          href: null,
+        }}
+      />
+      <Tabs.Screen
+        name="BillingScreen"
+        options={{
+          href: null,
         }}
       />
     </Tabs>
